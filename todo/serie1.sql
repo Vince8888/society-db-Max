@@ -29,6 +29,6 @@
 --26 select last_name, salary, commission_rate (commission_rate*salary) from employee where commission_rate IS not null order by commission_rate asc;
 --27 select CONCAT (last_name, first_name) from employee;
 --28 select SUBSTRING (last_name, 1, 5) from employee;
---29 select last_name,position( 'r' IN last_name) from employee;
---30 select last_name, UPPER(last_name),  LOWER(last_name) from employee where last_name = 'vrante';
+--29 select last_name,position( 'r' in last_name) from employee;
+--30 select last_name, UPPER(last_name), LOWER(last_name) from employee where last_name = 'vrante';
 --31 select last_name, LENGTH(last_name) from employee;
