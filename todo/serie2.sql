@@ -98,3 +98,53 @@ where  title = 'secrétaire';
 14 select title, COUNT(*)
 from employee
 group by title;
+
+15 select d.region, AVG(e.salary), SUM(e.salary)
+from employee e
+join department d
+on e.department_id = d.id
+group by d.region;
+
+16 select department_id
+from employee
+group by department_id
+having COUNT(*) >= 3;
+
+17 select SUBSTRING(name, 1, 1) AS initiale, COUNT(*)
+from employee
+group by SUBSTRING(name, 1, 1)
+having COUNT(*) >= 3;
+
+18 select
+    MAX(salary) AS max_salary,
+    MIN(salary) AS min_salary,
+    MAX(salary) - MIN(salary) AS ecart
+from employee;
+
+19
+select COUNT(DISTINCT title)
+from employee;
+
+20 select title, COUNT(*)
+from employee
+group by title;
+
+21 select d.name, COUNT(e.id)
+from department d
+left join employee e
+on d.id = e.department_id
+group by d.name;
+
+22 select title, AVG(salary)
+from employee
+group by title
+having AVG(salary) > (
+    select AVG(salary)
+    from employee
+    where title = 'Représentant'
+);
+
+23 select 
+    COUNT(salary) AS nb_salaires,
+    COUNT(commission) AS nb_commissions
+from employee;```
